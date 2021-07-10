@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/got-quotes-api/static/css/main.0592468e.chunk.css",
+    "main.js": "/got-quotes-api/static/js/main.3e52c157.chunk.js",
+    "main.js.map": "/got-quotes-api/static/js/main.3e52c157.chunk.js.map",
+    "runtime-main.js": "/got-quotes-api/static/js/runtime-main.2310e08e.js",
+    "runtime-main.js.map": "/got-quotes-api/static/js/runtime-main.2310e08e.js.map",
+    "static/js/2.8e2e1abb.chunk.js": "/got-quotes-api/static/js/2.8e2e1abb.chunk.js",
+    "static/js/2.8e2e1abb.chunk.js.map": "/got-quotes-api/static/js/2.8e2e1abb.chunk.js.map",
+    "index.html": "/got-quotes-api/index.html",
+    "static/css/main.0592468e.chunk.css.map": "/got-quotes-api/static/css/main.0592468e.chunk.css.map",
+    "static/js/2.8e2e1abb.chunk.js.LICENSE.txt": "/got-quotes-api/static/js/2.8e2e1abb.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/got-quotes-api/static/media/GOT.71fa190a.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2310e08e.js",
+    "static/js/2.8e2e1abb.chunk.js",
+    "static/css/main.0592468e.chunk.css",
+    "static/js/main.3e52c157.chunk.js"
+  ]
+}
