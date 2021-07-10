@@ -1,21 +1,37 @@
-import {useMantineTheme, Center, Loader, Divider} from '@mantine/core'
-
-import {useEffect} from 'react'
+import {useMantineTheme, Center, Loader} from '@mantine/core'
+import {useEffect, useState} from 'react'
 import {Container, Row, Col} from 'react-grid-system'
 import {useDispatch, useSelector} from 'react-redux'
 import CharacterList from './components/charaters/CharacterList'
-import Search from './components/search'
+import HomeSearch from './components/search'
 import {getCharactersAsync} from './redux/charactersSlice'
-import {MagnifyingGlassIcon} from '@modulz/radix-icons'
 import AppDivider from './components/AppDivider'
-
+import RandomQuote from './components/RandomQuote'
+import {useDebouncedValue} from '@mantine/hooks'
 function App() {
 	const dispatch = useDispatch()
-	const {isLoading} = useSelector(state => state.characters)
+	const {isLoading, data} = useSelector(state => state.characters)
+	const [filteredArrayBySearchValue, setFilteredArrayBySearchValue] = useState(
+		[],
+	)
+	const [searchValue, setSearchValue] = useState('')
+	const [debouncedSearchValue] = useDebouncedValue(searchValue, 500)
 
 	useEffect(() => {
 		dispatch(getCharactersAsync())
-	}, [])
+	}, [dispatch])
+	useEffect(() => {
+		if (debouncedSearchValue) {
+			const filteredSearchInputArr = data.filter(character => {
+				return (
+					character.name.includes(debouncedSearchValue) ||
+					character.slug.includes(debouncedSearchValue) ||
+					character?.house?.name.includes(debouncedSearchValue)
+				)
+			})
+			setFilteredArrayBySearchValue(filteredSearchInputArr)
+		}
+	}, [debouncedSearchValue, data])
 	const theme = useMantineTheme()
 
 	if (isLoading) {
@@ -36,7 +52,7 @@ function App() {
 		)
 	}
 	return (
-		<Container>
+		<Container fluid>
 			<Row>
 				<Col>
 					<Center
@@ -51,7 +67,15 @@ function App() {
 			{/* Search Bar */}
 			<Row>
 				<Col>
-					<Search />
+					<HomeSearch
+						searchValue={searchValue}
+						setSearchValue={setSearchValue}
+					/>
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					<RandomQuote />
 				</Col>
 			</Row>
 			{/* Divider */}
@@ -59,7 +83,10 @@ function App() {
 			{/* All Cards */}
 			<Row>
 				<Col>
-					<CharacterList />
+					<CharacterList
+						filteredArrayBySearchValue={filteredArrayBySearchValue}
+						debouncedSearchValue={debouncedSearchValue}
+					/>
 				</Col>
 			</Row>
 		</Container>

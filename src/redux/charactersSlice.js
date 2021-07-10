@@ -4,11 +4,15 @@ import axios from 'axios'
 export const getCharactersAsync = createAsyncThunk(
 	'characters/getCharactersAsync',
 	async () => {
+		if (window.localStorage.getItem('characters')) {
+			return JSON.parse(window.localStorage.getItem('characters'))
+		}
 		try {
 			const {data} = await axios.get(
 				'https://raw.githubusercontent.com/ghana7989/got-quotes-api/main/Details.json',
 			)
 			if (data?.details?.length) {
+				window.localStorage.setItem('characters', JSON.stringify(data.details))
 				return data.details
 			}
 		} catch (e) {

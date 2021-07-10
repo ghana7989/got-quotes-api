@@ -1,13 +1,32 @@
 import React from 'react'
-import {useSelector} from 'react-redux'
-import {Container, Col, Row} from 'react-grid-system'
 import QuotesListItem from './QuotesListItem'
 import {Group, Paper, useMantineTheme} from '@mantine/core'
 const QuotesList = ({quotes, name}) => {
 	const theme = useMantineTheme()
 	return (
-		<Group direction='column' position='center'>
-			<h1>{name}</h1>
+		<Group
+			direction='column'
+			position='center'
+			style={{
+				position: 'absolute',
+			}}
+		>
+			<Group
+				style={{
+					position: 'sticky',
+					top: 100,
+					zIndex: -5,
+					wordWrap: 'break-word',
+				}}
+			>
+				<h1
+					style={{
+						fontSize: '20rem',
+					}}
+				>
+					{name}
+				</h1>
+			</Group>
 			{quotes.map(quote => (
 				<Paper
 					padding='lg'
@@ -16,6 +35,7 @@ const QuotesList = ({quotes, name}) => {
 					style={{
 						backgroundColor: theme.colors.ebony,
 					}}
+					key={quote.id}
 				>
 					<QuotesListItem quote={quote} />
 				</Paper>

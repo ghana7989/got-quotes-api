@@ -1,19 +1,11 @@
-import {
-	Card,
-	Overlay,
-	Badge,
-	useMantineTheme,
-	Group,
-	Modal,
-	Image,
-} from '@mantine/core'
+import {Card, Badge, useMantineTheme, Group, Modal, Image} from '@mantine/core'
 import {useToggle} from '@mantine/hooks'
 import React from 'react'
 import QuotesList from '../quotes/QuotesList'
 
 const CharacterListItem = ({character}) => {
 	const theme = useMantineTheme()
-	const {house, imageFull, name, slug, quotes} = character
+	const {house, imageFull, name, quotes} = character
 	const [isModalOpen, toggleModalOpen] = useToggle(false, [false, true])
 	const handleCardOnClick = e => {
 		toggleModalOpen()

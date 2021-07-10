@@ -1,5 +1,5 @@
 import {Kbd, TextInput} from '@mantine/core'
-import {useRef, useState} from 'react'
+import {useRef} from 'react'
 import {useHotkeys} from 'react-hotkeys-hook'
 import {MagnifyingGlassIcon} from '@modulz/radix-icons'
 
@@ -11,19 +11,16 @@ export const searchBarRightSection = (
 	</div>
 )
 
-const Search = () => {
+const HomeSearch = ({searchValue, setSearchValue}) => {
 	const searchRef = useRef()
 	// Hot key for immediate search
 	useHotkeys('ctrl+/', () => {
 		searchRef.current.focus()
 	})
 
-	const [searchValue, setSearchValue] = useState('')
-
 	function handleSearchOnChange(e) {
 		setSearchValue(e.target.value)
 	}
-
 	return (
 		<TextInput
 			elementRef={searchRef}
@@ -38,4 +35,4 @@ const Search = () => {
 	)
 }
 
-export default Search
+export default HomeSearch

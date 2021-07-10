@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, MantineProvider} from '@mantine/core'
+import {MantineProvider} from '@mantine/core'
 
 function Theme({children}) {
 	return (
