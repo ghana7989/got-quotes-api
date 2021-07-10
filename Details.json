@@ -293,6 +293,8 @@
 			"name": "Tormund",
 			"slug": "tormund",
 			"house": null,
+			"imageSmall": "https://media.gq.com/photos/59a8525ea8f9950beb00a0f6/16:9/w_2560%2Cc_limit/2017_08_GQ_GameofThrones_death_lede.jpg",
+			"imageFull": "https://media.gq.com/photos/59a8525ea8f9950beb00a0f6/16:9/w_2560%2Cc_limit/2017_08_GQ_GameofThrones_death_lede.jpg",
 			"quotes": ["Gingers are beautiful. We've been kissed by fire."]
 		},
 		{
