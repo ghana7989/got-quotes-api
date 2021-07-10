@@ -1,4 +1,4 @@
-import {useMantineTheme, Center, Loader} from '@mantine/core'
+import {useMantineTheme, Center, Loader, Divider} from '@mantine/core'
 
 import {useEffect} from 'react'
 import {Container, Row, Col} from 'react-grid-system'
@@ -6,6 +6,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import CharacterList from './components/charaters/CharacterList'
 import Search from './components/search'
 import {getCharactersAsync} from './redux/charactersSlice'
+import {MagnifyingGlassIcon} from '@modulz/radix-icons'
+import AppDivider from './components/AppDivider'
 
 function App() {
 	const dispatch = useDispatch()
@@ -52,6 +54,8 @@ function App() {
 					<Search />
 				</Col>
 			</Row>
+			{/* Divider */}
+			<AppDivider text='Search Results' />
 			{/* All Cards */}
 			<Row>
 				<Col>

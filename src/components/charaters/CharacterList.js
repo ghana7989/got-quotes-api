@@ -9,7 +9,7 @@ const CharacterList = () => {
 		<Container>
 			<Row>
 				{charactersData.map(character => (
-					<Col xs={12} md={6} lg={4}>
+					<Col xs={12} md={6} lg={4} key={character.slug}>
 						<CharacterListItem character={character} />
 					</Col>
 				))}
