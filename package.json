@@ -6,7 +6,7 @@
 		"@mantine/core": "^2.0.2",
 		"@mantine/hooks": "^2.0.2",
 		"@modulz/radix-icons": "^4.0.0",
-		"@reduxjs/toolkit": "^1.6.0",
+		"@reduxjs/toolkit": "^1.6.1",
 		"axios": "^0.21.1",
 		"node-sass": "5.0.0",
 		"react": "^17.0.2",
