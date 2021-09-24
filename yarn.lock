@@ -1418,10 +1418,10 @@
     react-textarea-autosize "^8.3.2"
     react-transition-group "^4.4.2"
 
-"@mantine/hooks@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-2.0.2.tgz#4eb5197010733614f80732f4ce0f9fba542e0b91"
-  integrity sha512-4x7Ai7KG7CrQ8xJ/VoiVeEG2BcIgQtuDto002yZxQhdDXbjL37goKePHHyt4vOwF7tvUysna1TL0GvWfxqhUWg==
+"@mantine/hooks@^2.4.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-2.5.1.tgz#b36e5c9802d732ae7c5b814aa9d5ca9b845224fc"
+  integrity sha512-Jfjl7Df2KsTMdzOiMuuZ+E/+RpEdy7v3QnK6Ae6XI4Dsfq+4flTbUEN0+lSn8UUqqMH9CifJtGK/cARl5VSy3g==
 
 "@modulz/radix-icons@^4.0.0":
   version "4.0.0"
